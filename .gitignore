@@ -19,9 +19,6 @@ dist/
 !backend/ml_models/*.pkl
 *.joblib
 
-# Ignore model directories
-models/
-#folk_antigravity/models/
 
 # Ignore datasets/audio
 datasets/
