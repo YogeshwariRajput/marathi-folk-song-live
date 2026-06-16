@@ -290,4 +290,10 @@ def health_check():
         "models_loaded": vectorizer is not None and clf is not None and encoder is not None and metadata_map is not None
     })
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5001)
+
+port = int(os.environ.get("PORT", 5001))
+
+app.run(
+    host="0.0.0.0",
+    port=port
+)
