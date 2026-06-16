@@ -16,12 +16,12 @@ dist/
 
 # Ignore ALL pickle/model files
 *.pkl
-#!backend/ml_models/*.pkl
+!backend/ml_models/*.pkl
 *.joblib
 
 # Ignore model directories
 models/
-folk_antigravity/models/
+#folk_antigravity/models/
 
 # Ignore datasets/audio
 datasets/
