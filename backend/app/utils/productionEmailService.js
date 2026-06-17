@@ -101,7 +101,9 @@ export const sendVerificationEmail = async (email, token) => {
 };
 
 export const sendPasswordResetEmail = async (email, token) => {
-  const resetUrl = `http://localhost:3000/reset-password/${token}`;
+  // const resetUrl = `http://localhost:3000/reset-password/${token}`;
+  const resetUrl =
+  `${process.env.FRONTEND_URL}/reset-password/${token}`;
   
   // Similar implementation for password reset
   console.log('📧 Password reset email sent (production service)');
