@@ -2,8 +2,9 @@ import nodemailer from 'nodemailer';
 
 // Universal email service that works for all users
 export const sendVerificationEmail = async (email, token) => {
-  const verificationUrl = `http://localhost:5000/api/auth/verify-email/${token}`;
-  
+  //const verificationUrl = `http://localhost:5000/api/auth/verify-email/${token}`;
+  const verificationUrl = `${process.env.FRONTEND_URL || 'http://localhost:5000'}/api/auth/verify-email/${token}`;
+
   console.log('📧 Universal Email Verification Starting...');
   console.log('👤 User Email:', email);
   console.log('📧 Using Gmail:', process.env.EMAIL_USER);
@@ -129,7 +130,8 @@ export const sendVerificationEmail = async (email, token) => {
 };
 
 export const sendPasswordResetEmail = async (email, token) => {
-  const resetUrl = `http://localhost:3000/reset-password/${token}`;
+ // const resetUrl = `http://localhost:3000/reset-password/${token}`;
+  const resetUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/reset-password/${token}`;
   
   console.log('🔐 Universal Password Reset Starting...');
   console.log('👤 User Email:', email);
