@@ -13,7 +13,8 @@ const EmailVerification = () => {
   const verifyEmail = useCallback(async () => {
     console.log('Starting email verification with token:', token);
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/verify-email/${token}`, {
+      const response = await fetch(`${process.env.REACT_APP_NODE_API}/api/auth/verify-email/${token}`
+        //`http://localhost:5000/api/auth/verify-email/${token}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
