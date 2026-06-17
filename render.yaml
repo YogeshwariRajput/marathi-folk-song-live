@@ -2,6 +2,7 @@ services:
   - type: web
     name: mcp-node-api
     env: node
+    plan: free
     rootDir: backend
     buildCommand: npm install
     startCommand: npm start
@@ -22,6 +23,7 @@ services:
   - type: web
     name: mcp-python-api
     env: python
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn api_server:app
