@@ -105,7 +105,8 @@ const CommunityForm = () => {
       });
       
       await axios.post(
-        "http://localhost:5000/api/community/add",
+      //  "http://localhost:5000/api/community/add",
+        `${process.env.REACT_APP_NODE_API}/api/community/add`,
         formData,
         { 
           headers: { 
