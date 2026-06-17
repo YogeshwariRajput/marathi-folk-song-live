@@ -2,7 +2,9 @@ import nodemailer from 'nodemailer';
 
 // Production email service with multiple providers
 export const sendVerificationEmail = async (email, token) => {
-  const verificationUrl = `http://localhost:5000/api/auth/verify-email/${token}`;
+  //const verificationUrl = `http://localhost:5000/api/auth/verify-email/${token}`;
+  const verificationUrl =
+  `${process.env.BACKEND_URL}/api/auth/verify-email/${token}`;
   
   // Try multiple email services
   const emailServices = [
