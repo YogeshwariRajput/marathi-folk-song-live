@@ -289,11 +289,22 @@ def health_check():
         "status": "healthy",
         "models_loaded": vectorizer is not None and clf is not None and encoder is not None and metadata_map is not None
     })
+# if __name__ == "__main__":
+
+# port = int(os.environ.get("PORT", 5001))
+
+# app.run(
+#     host="0.0.0.0",
+#     port=port
+# For production, Gunicorn will handle this
+# Local development only
 if __name__ == "__main__":
-
-port = int(os.environ.get("PORT", 5001))
-
-app.run(
-    host="0.0.0.0",
-    port=port
+    port = int(os.environ.get("PORT", 5001))
+    debug = os.environ.get("FLASK_DEBUG", "0") == "1"
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=debug,
+        use_reloader=False
+    # )
 )
